@@ -224,8 +224,8 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 #define INVERT_Y_DIR false     // false for FoldaRap
 #define INVERT_Z_DIR false    // true for FoldaRap
 #define INVERT_E0_DIR true   // false for direct drive Nema14, true for PG35L-038
-#define INVERT_E1_DIR false   //
-#define INVERT_E2_DIR false   //
+#define INVERT_E1_DIR true   //
+#define INVERT_E2_DIR true   //
 
 // ENDSTOP SETTINGS:
 // Sets direction of endstops when homing; 1=MAX, -1=MIN
@@ -233,14 +233,14 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
 
-#define min_software_endstops false //If true, axis won't move to coordinates less than HOME_POS.
+#define min_software_endstops true //If true, axis won't move to coordinates less than HOME_POS.
 #define max_software_endstops true  //If true, axis won't move to coordinates greater than the defined lengths below.
 // Travel limits after homing
 #define X_MAX_POS 200
 #define X_MIN_POS 0
 #define Y_MAX_POS 200
 #define Y_MIN_POS 0
-#define Z_MAX_POS 100
+#define Z_MAX_POS 200
 #define Z_MIN_POS 0
 
 #define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS)
@@ -263,7 +263,7 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 // default settings 
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,80,140}  // FoldaRap // Z-step-mm = 3200 for M6 // 4000 for M5
-#define DEFAULT_MAX_FEEDRATE          {250, 250, 100, 50}    // (mm/sec)
+#define DEFAULT_MAX_FEEDRATE          {250, 250, 250, 50}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {4500,4500,1000,10200}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          3000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves 
